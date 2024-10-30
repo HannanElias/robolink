@@ -1,0 +1,20 @@
+from codrone_edu.drone import *
+
+drone = Drone()
+drone.pair()
+
+ #------Function for sensoring the right color
+def mats_color():
+    choice = drone.get_colors() #sense the mat color
+    if choice == "Blue":
+        drone.set_drone_LED(0, 0, 250, 100)
+    elif choice == "Green":
+        drone.set_drone_LED(0, 250, 0, 100)
+    elif choice == "Red":
+        drone.set_drone_LED(250, 0, 0, 100)
+    else:
+        print("Not applicable")
+#-----Function ends here------------------------
+
+#---------------------Main Code-----------------------------------------
+mats_color()
